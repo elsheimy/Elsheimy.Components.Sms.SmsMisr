@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Mohammad Elsheimy</Authors>
+    <PackageProjectUrl>https://github.com/elsheimy/Elsheimy.Components.Sms.SmsMisr</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/elsheimy/Elsheimy.Components.Sms.SmsMisr</RepositoryUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <Description>.NET Wrapper for the API of the leading SMS services in Egypt, SMSMisr (http://sms.com.eg/)</Description>
+    <PackageTags>SMS,API,Egypt</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Elsheimy.Components.RemoteApi\Elsheimy.Components.RemoteApi.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Assets\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

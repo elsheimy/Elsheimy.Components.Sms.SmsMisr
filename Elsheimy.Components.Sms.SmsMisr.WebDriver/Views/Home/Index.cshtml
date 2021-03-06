@@ -1,0 +1,146 @@
+﻿@model Elsheimy.Components.Sms.SmsMisr.SmsRequest
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width" />
+  <title>SMSMisr Wrapper Sample</title>
+
+  <link href="~/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <script type="text/javascript" src="~/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="~/lib/twitter-bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container mt-2">
+    <a class="navbar-brand" href="/">
+      <h3>SMSMisr Wrapper Sample</h3>
+    </a>
+
+    <div class="row">
+      <div class="col">
+        <partial name="_RequestForm" model="Model" />
+
+      </div>
+      <div class="col">
+        <partial name="_ResponseForm" />
+
+      </div>
+    </div>
+  </div>
+
+
+  <script type="text/javascript">
+    function addNumber() {
+      var mobileInput = $('#mobileInput')[0];
+      var mobileSelect = $('#mobileListSelect')[0];
+
+      var value = mobileInput.value;
+
+      if (value == '')
+        return;
+
+      if (true == checkMobileExists(mobileSelect, value)) {
+        mobileInput.value = '';
+        return;
+      }
+
+      var option = document.createElement('option');
+      option.value = value;
+      option.innerText = value;
+
+      mobileSelect.add(option);
+
+      mobileInput.value = '';
+
+    }
+
+    function checkMobileExists(mobileSelect, mobile) {
+      for (i = 0; i < mobileSelect.length; i++) {
+        if (mobileSelect.options[i].value == mobile)
+          return true;
+      }
+
+      return false;
+    }
+
+    function removeMobile(mobile) {
+      var mobileSelect = $('#mobileListSelect')[0];
+      for (i = 0; i < mobileSelect.length; i++) {
+        if (mobileSelect.options[i].value == mobile) {
+          mobileSelect.remove(mobileSelect.options[i]);
+          return;
+        }
+      }
+    }
+
+
+    function sendMessage() {
+      var username = $('#usernameInput')[0].value;
+      var password = $('#passwordInput')[0].value;
+      var sender = $('#senderInput')[0].value;
+      var message = $('#messageInput')[0].value;
+      var language = $('#languageSelect')[0].value;
+      var mobileSelect = $('#mobileListSelect')[0];
+      var mobile = [];
+      for (i = 0; i < mobileSelect.length; i++) {
+        mobile.push(mobileSelect[i].value);
+      }
+      var token = $('#requestForm > input:hidden[name="__RequestVerificationToken"]').val();
+
+
+      var data = {
+        "username": username,
+        "password": password,
+        "sender": sender,
+        "message": message,
+        "language": +language,
+        "mobile": mobile,
+      };
+      var headers = {
+        "RequestVerificationToken": token
+      };
+
+      var url = window.location.origin + "/home/send";
+      $.post({
+        url: url,
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        headers: headers
+      })
+        .done(sendCompleted)
+        .fail(sendFail);
+
+    }
+
+    function sendCompleted(data) {
+      $('#requestError').hide();
+
+
+      $('#responseCodeInput')[0].value = data.code;
+      $('#responseMessageInput')[0].value = data.errorMessage;
+      $('#responseVodafoneCostInput')[0].value = data.vodafoneCost;
+      $('#responseOrangeCostInput')[0].value = data.orangeCost;
+      $('#responseEtisalatCostInput')[0].value = data.etisalatCost;
+      $('#responseWeCostInput')[0].value = data.weCost;
+    }
+
+    function sendFail(xhr, status, error) {
+      $('#requestError').html(error);
+      $('#requestError').show();
+
+      $('#responseCodeInput')[0].value = '';
+      $('#responseMessageInput')[0].value = '';
+      $('#responseVodafoneCostInput')[0].value = '';
+      $('#responseOrangeCostInput')[0].value = '';
+      $('#responseEtisalatCostInput')[0].value = '';
+      $('#responseWeCostInput')[0].value = '';
+    }
+
+
+
+  </script>
+</body>
+</html>
+
+

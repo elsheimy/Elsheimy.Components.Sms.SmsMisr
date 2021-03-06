@@ -1,0 +1,58 @@
+﻿@model Elsheimy.Components.Sms.SmsMisr.SmsRequest
+
+<form id="requestForm" method="post">
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <h5>Request</h5>
+      </div>
+      <div class="card-text">
+        <div class="mb-3">
+          <label asp-for="Username">Username</label>
+          <input id="usernameInput" type="text" class="form-control" asp-for="Username" />
+        </div>
+        <div class="mb-3">
+          <label asp-for="Password">Password</label>
+          <input id="passwordInput" type="text" class="form-control" asp-for="Password" />
+        </div>
+        <div class="mb-3">
+          <label asp-for="Sender">Sender ID</label>
+          <input id="senderInput" type="text" class="form-control" asp-for="Sender" />
+        </div>
+        <div class="mb-3">
+          <label asp-for="Message">Message</label>
+          <textarea id="messageInput" class="form-control" asp-for="Message" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+          <label asp-for="Language">Language</label>
+          <select id="languageSelect" class="form-control" asp-for="Language">
+            <option value="1" selected="selected">English</option>
+            <option value="2">Arabic</option>
+            <option value="3">Unicode</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label asp-for="MobileList">Mobile List</label>
+          <select id="mobileListSelect" size="3" multiple class="form-control"
+                  ondblclick="removeMobile(this.value)"
+                  asp-items="new SelectList( Model.MobileList)">
+          </select>
+        </div>
+        <div class="mb-3 row">
+          <div class="col-sm-10">
+            <input id="mobileInput" type="number" class="form-control" />
+          </div>
+          <div class="col-sm-2">
+            <button class="btn btn-secondary" onclick="addNumber(); return false;">Add</button>
+          </div>
+        </div>
+        <div class="mb-3">
+          <button onclick="sendMessage(); return false;" class="form-control btn btn-primary" asp-action="SendRequest">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+
+
