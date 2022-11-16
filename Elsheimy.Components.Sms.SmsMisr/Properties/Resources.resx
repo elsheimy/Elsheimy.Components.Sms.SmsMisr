@@ -145,28 +145,16 @@
     <value>Invalid Date &amp; Time format in “DelayUntil=” parameter</value>
   </data>
   <data name="SmsResponse_1909" xml:space="preserve">
-    <value>Error In Message</value>
+    <value>Invalid Message</value>
   </data>
-  <data name="SmsResponse_6000" xml:space="preserve">
-    <value>Success, Request Submitted Successfully</value>
+  <data name="SmsResponse_1910" xml:space="preserve">
+    <value>Invalid Language</value>
   </data>
-  <data name="SmsResponse_8001" xml:space="preserve">
-    <value>Mobile IS Null</value>
+  <data name="SmsResponse_1911" xml:space="preserve">
+    <value>Text is too long</value>
   </data>
-  <data name="SmsResponse_8002" xml:space="preserve">
-    <value>Message IS Null</value>
-  </data>
-  <data name="SmsResponse_8003" xml:space="preserve">
-    <value>Language IS Null</value>
-  </data>
-  <data name="SmsResponse_8004" xml:space="preserve">
-    <value>Language IS Null</value>
-  </data>
-  <data name="SmsResponse_8005" xml:space="preserve">
-    <value>Username IS Null</value>
-  </data>
-  <data name="SmsResponse_8006" xml:space="preserve">
-    <value>Username IS Null</value>
+  <data name="SmsResponse_1912" xml:space="preserve">
+    <value>Invalid Environment</value>
   </data>
   <data name="SmsResponse_Error" xml:space="preserve">
     <value>Invalid URL , This means that one of the parameters was not provided or wrong information</value>
