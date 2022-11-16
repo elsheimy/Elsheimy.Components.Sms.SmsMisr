@@ -19,7 +19,7 @@ namespace Elsheimy.Components.Sms.SmsMisr.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -142,7 +142,7 @@ namespace Elsheimy.Components.Sms.SmsMisr.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error In Message.
+        ///   Looks up a localized string similar to Invalid Message.
         /// </summary>
         internal static string SmsResponse_1909 {
             get {
@@ -151,65 +151,29 @@ namespace Elsheimy.Components.Sms.SmsMisr.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Success, Request Submitted Successfully.
+        ///   Looks up a localized string similar to Invalid Language.
         /// </summary>
-        internal static string SmsResponse_6000 {
+        internal static string SmsResponse_1910 {
             get {
-                return ResourceManager.GetString("SmsResponse_6000", resourceCulture);
+                return ResourceManager.GetString("SmsResponse_1910", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mobile IS Null.
+        ///   Looks up a localized string similar to Text is too long.
         /// </summary>
-        internal static string SmsResponse_8001 {
+        internal static string SmsResponse_1911 {
             get {
-                return ResourceManager.GetString("SmsResponse_8001", resourceCulture);
+                return ResourceManager.GetString("SmsResponse_1911", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Message IS Null.
+        ///   Looks up a localized string similar to Invalid Environment.
         /// </summary>
-        internal static string SmsResponse_8002 {
+        internal static string SmsResponse_1912 {
             get {
-                return ResourceManager.GetString("SmsResponse_8002", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Language IS Null.
-        /// </summary>
-        internal static string SmsResponse_8003 {
-            get {
-                return ResourceManager.GetString("SmsResponse_8003", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Language IS Null.
-        /// </summary>
-        internal static string SmsResponse_8004 {
-            get {
-                return ResourceManager.GetString("SmsResponse_8004", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Username IS Null.
-        /// </summary>
-        internal static string SmsResponse_8005 {
-            get {
-                return ResourceManager.GetString("SmsResponse_8005", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Username IS Null.
-        /// </summary>
-        internal static string SmsResponse_8006 {
-            get {
-                return ResourceManager.GetString("SmsResponse_8006", resourceCulture);
+                return ResourceManager.GetString("SmsResponse_1912", resourceCulture);
             }
         }
         
